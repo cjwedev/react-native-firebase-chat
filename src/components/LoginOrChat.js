@@ -1,18 +1,20 @@
 
 import {connect} from 'react-redux';
 
-import ChatUI from './chatUI';
+import ChatUI from './ChatUI';
 import LoginUI from './LoginUI';
 
 const LoginOrChat = connect(
   (state) => ({
-      authorized: state.user.authorized
+    //   authorized: state.user.authorized
+    authorized: true
   })
 )(({ authorized }) => {
   if (authorized) {
       return (<ChatUI />);
   }else{
-      return (<LoginUI />);
+    dispatch(checkUserExists());
+    return (<LoginUI />);
   }
 });
 
