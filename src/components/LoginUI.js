@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Screen, Title, Text, Divider, Button, Spinner } from '@shoutem/ui';
+import { Screen, Title, Divider, Spinner } from '@shoutem/ui';
 
-// import Input from '../containers/Input';
-// import LoginButton from '../containers/LoginButton';
+import Input from '../containers/Input';
+import LoginButton from '../containers/LoginButton';
 import { setUserName, setUserAvatar } from '../actions';
 
 const mapStateToProps = (state) => ({
-    authorizing: state.user.authorizing
+  authorizing: state.user.authorizing
 });
 
 class LoginUI extends Component {
@@ -17,7 +17,7 @@ class LoginUI extends Component {
         <Title>Who are you?</Title>
         <Divider />
 
-        {/* <Input placeholder="Your name here"
+        <Input placeholder="Your name here"
                 submitAction={setUserName}
                 submitOnBlur
                 noclear
@@ -31,7 +31,7 @@ class LoginUI extends Component {
                 ref="avatar"/>
         <Divider />
 
-        {this.props.authorizing ? <Spinner /> : <LoginButton />} */}
+        {this.props.authorizing ? <Spinner /> : <LoginButton />}
       </Screen>
     );
   }
