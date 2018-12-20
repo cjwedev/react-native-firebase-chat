@@ -1,4 +1,12 @@
 // src/reducers/user.js
+
+const initialState = {
+  name: null,
+  avatar: 'https://abs.twimg.com/sticky/default_profile_images/default_profile_3_400x400.png',
+  authorizing: false,
+  authorized: false
+};
+
 const user = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_USER_NAME':

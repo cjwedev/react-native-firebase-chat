@@ -1,8 +1,8 @@
-
+import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
 import ChatUI from './ChatUI';
-import LoginUI from './LoginUI';
+// import LoginUI from './LoginUI';
 
 const LoginOrChat = connect(
   (state) => ({
@@ -14,7 +14,7 @@ const LoginOrChat = connect(
       return (<ChatUI />);
   }else{
     dispatch(checkUserExists());
-    return (<LoginUI />);
+    return (<ChatUI />);
   }
 });
 
