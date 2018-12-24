@@ -104,7 +104,7 @@ export const login = () => {
               const { name, avatar } = getState().user;
               
               firebase.database()
-                      .ref(`users/${DeviceInfo.getUniqueID()}`)
+                      .ref('users/chatappuser')
                       .set({
                           name,
                           avatar
@@ -156,7 +156,7 @@ export const checkUserExists = () => {
       firebase.auth()
               .signInAnonymously()
               .then(() => firebase.database()
-                                  .ref(`users/${DeviceInfo.getUniqueID()}`)
+                                  .ref('users/chatappuser')
                                   .once('value', (snapshot) => {
                                       const val = snapshot.val();
 
